@@ -19,3 +19,4 @@ volt::route('/memos/create', 'memos.create')->name('memos.create');
 volt::route('/memos/{memo}', 'memos.show')->name('memos.show');
 // コンポーネントは sail artisan make:volt memos/show としている。
 // ブラウザへの表示は/memos番号となる。この番号は象さんマークの番号且つ内容はメモシーダーphpからから持ってきている。
+volt::route('/memos/{memo}/edit', 'memos.edit')->name('memos.edit');
