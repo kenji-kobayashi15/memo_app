@@ -1,0 +1,22 @@
+<?php
+
+use function Livewire\Volt\{state};
+use App\Models\Memo;
+//メモモデルのクラスを読み込んでいる
+
+state(['memos' => fn() => Memo::all()]);
+
+?>
+
+<div>
+    <h1>タイトル一覧</h1>
+    <ul>
+        @foreach ($memos as $memo)
+            <li>
+                <a href="{{ route('memos.show', $memo) }}">
+                    {{ $memo->title }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+</div>
